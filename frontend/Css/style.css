@@ -1,0 +1,98 @@
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    width: 99vw;
+    height: 99vh;
+}
+
+#login{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    column-gap: 30px;
+}
+
+#typewriter{
+    width: 50%;
+    height: 100%;
+    background-color: #00fa9a;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    row-gap: 0px;
+}
+
+.titulo{
+    margin-top: 50px;
+    width: 270px;
+    height: 260px;
+}
+
+.titulo h1{
+    text-align: center;
+    font-size: 2.5em;
+    border: 0px solid red;
+    margin: 0px;
+    color: #7fffd4;
+}
+
+.logo{
+    border: 0px solid red;
+    margin: 0px auto;
+    width: 180px;
+    height: 200px;
+}
+
+.logo img{
+    width: 100%;
+    height: 100%;
+}
+
+.textTypewriter {
+    text-align: center;
+    font-size: 3em;
+    color: white;
+}
+
+#formLogin{
+    border: 0px solid black;
+    height: 300px;
+    width: 40%;
+}
+
+#formLogin form{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    row-gap: 20px;
+    height: 300px;
+    border: 0px solid red;
+}
+
+#formLogin form label{
+    font-size: 1.5em;
+}
+
+#formLogin form input{
+    width: 230px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 5px;
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+button.btnLog{
+    width: 240px;
+    padding: 9px;
+    border-radius: 10px;
+    border: 0px solid gray;
+    background-color: #00fa9a;
+    margin-top: 10px;
+}

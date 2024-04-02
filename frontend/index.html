@@ -2,9 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" href="Css/style.css">
+    <link rel="shortcut icon" href="img/iconTitle.ico" type="image/x-icon">
+    <title>ConnectBank</title>
 </head>
 <body>
+
+    <div id="login" >
+
+            <section id="typewriter">
+
+                <div class="titulo">
+                    <div class="logo">
+                        <img src="/frontend/img/Logo.png" alt="">
+                    </div>
+                    
+                    <h1>ConnectBank</h1>
+                </div>
+
+                <h2 id="textH2" class="textTypewriter"></h2>
+
+            </section>
+    
+            <section id="formLogin" >
+                <form>
+                    <div class="inputCpf" >
+                        <label for="cpf">CPF</label> <br>
+                        <input type="text" placeholder="000.000.000-00" id="cpf">
+                    </div>
+    
+                    <div class="inputSenha">
+                        <label for="senha">Senha</label> <br>
+                        <input type="password" placeholder="Digite sua senha" id="senha">
+                    </div>
+    
+                    <button class="btnLog" type="submit" >Continuar</button>
+                </form>
+            </section>
+
+    </div>
+
+    <script src="./Js/script.js" ></script>
 
 </body>
 </html>
