@@ -9,5 +9,4 @@ public class BankApp {
         SpringApplication.run(BankApp.class,args);
         System.out.println("Alo Mundo Spring Boot");
     }
-
 }
