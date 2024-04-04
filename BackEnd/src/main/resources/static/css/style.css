@@ -88,11 +88,23 @@ body{
     margin-top: 5px;
 }
 
+#formLogin span a{
+    color: black;
+}
+
 button.btnLog{
     width: 240px;
     padding: 9px;
     border-radius: 10px;
-    border: 0px solid gray;
+    border: 1px solid rgba(0, 0, 0, 0);
     background-color: #00fa9a;
     margin-top: 10px;
+}
+
+button.btnLog:hover{
+    cursor: pointer;
+    transition: .5s;
+    color: #00fa9a;
+    border: 1px solid #00fa9a;
+    background-color: white;
 }
