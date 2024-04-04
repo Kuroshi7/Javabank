@@ -31,14 +31,17 @@ const interval = setInterval(typewriter, 125)
 addEventListener('submit', (e) => {
     e.preventDefault()
 
-    fetch('http://localhost:8080/login', {
+    const requisicao = async () => {
+        
+        await fetch('http://localhost:8080/login', {
         method: 'GET',
         mode: 'no-cors',
         headers: {
             'Content-Type': 'application/json'
         }
     })
-    .then(response => console.log(response))
+    .then(response => console.log(response.text()))}
+
+    requisicao()
 
 })
-
