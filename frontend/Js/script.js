@@ -27,3 +27,18 @@ const typewriter = () => {
 }
 
 const interval = setInterval(typewriter, 125)
+
+addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    fetch('http://localhost:8080/login', {
+        method: 'GET',
+        mode: 'no-cors',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => console.log(response))
+
+})
+
