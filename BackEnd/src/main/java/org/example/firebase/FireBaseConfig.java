@@ -3,12 +3,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
 import java.io.IOException;
 import com.google.firebase.FirebaseOptions;
-import org.springframework.stereotype.Service;
-
-import com.google.firebase.FirebaseOptions;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.firestore.Firestore;
-import com.google.cloud.firestore.v1.FirestoreClient;
 import com.google.firebase.FirebaseApp;
 
 import java.io.InputStream;
@@ -21,6 +16,7 @@ public class FireBaseConfig {
 
         InputStream serviceAccount = getClass().getClassLoader().getResourceAsStream("serviceAccountKey.json");
         
+        @SuppressWarnings("deprecation")
         FirebaseOptions options = new FirebaseOptions.Builder()
         .setCredentials(GoogleCredentials.fromStream(serviceAccount))
         .build();
