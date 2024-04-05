@@ -1,3 +1,16 @@
-#titulo{
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    width: 99vw;
+    height: 99vh;
+}
+
+h1{
     color: red;
+}
+
+#cadastro{
+    border: 1px solid black;
 }

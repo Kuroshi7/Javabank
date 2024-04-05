@@ -5,41 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/cadastrar.css">
     <title>Document</title>
+
+    <style>
+
+        body{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            width: 99vw;
+            height: 99vh;
+        }
+
+        #cadastro{
+            border: 1px solid black;
+        }
+
+    </style>
+
 </head>
 <body>
     
-    <h1 id="titulo" >Seja bem vindo a pagina de cadastro</h1>
+    <div id="cadastro">
 
-    <form action="">
+        <section>
+            <h1 class="titulo" >Seja bem vindo ao ConnectBank</h1>
+        </section>
 
-        <div>
-            <label for="">Nome</label>
-            <input type="text">
-        </div>
+        <section id="formCadastro" >
+            <form>
+    
+                <div>
+                    <label for="">Nome</label>
+                    <input type="text">
+                </div>
+        
+                <div>
+                    <label for="">CPF</label>
+                    <input type="text">
+                </div>
+        
+                <div>
+                    <label for="">Idade</label>
+                    <input type="text">
+                </div>
+        
+                <div>
+                    <label for="">Senha</label>
+                    <input type="text">
+                </div>
+        
+                <div>
+                    <label for="">Confirmar Senha</label>
+                    <input type="text">
+                </div>
+        
+            </form>
+        </section>
 
-        <div>
-            <label for="">CPF</label>
-            <input type="text">
-        </div>
+    </div>
 
-        <div>
-            <label for="">Idade</label>
-            <input type="text">
-        </div>
-
-        <div>
-            <label for="">Senha</label>
-            <input type="text">
-        </div>
-
-        <div>
-            <label for="">Confirmar Senha</label>
-            <input type="text">
-        </div>
-
-    </form>
-
-    <a th:href="@{/}">Voltar para area de login</a>
+    <!-- <a th:href="@{/}">Voltar para area de login</a> -->
 
 </body>
 </html>

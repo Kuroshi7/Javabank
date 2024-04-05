@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6647fb15-dab2-4791-9dcf-65b13d484285" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/java/org/example/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/resources/static/css/cadastrar.css" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/resources/static/css/cadastrar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BackEnd/src/main/resources/templates/pages/cadastrar.html" beforeDir="false" afterPath="$PROJECT_DIR$/BackEnd/src/main/resources/templates/pages/cadastrar.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +53,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "teste",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Desenvolvimento/Javabank",
+    "last_opened_file_path": "C:/Users/admin/Desktop/conectFront&Back/Back-end/firebase",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
