@@ -16,7 +16,7 @@ public class CustomerService {
         DocumentReference docReference = fireStore.collection("customer").document();
 
         customer.setId(docReference.getId());
-        docReference.set(customer);
+        
         ApiFuture<WriteResult> apiFuture = docReference.set(customer);
 
     }
