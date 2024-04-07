@@ -1,10 +1,13 @@
 package org.example.firebase;
 
+import java.util.concurrent.ExecutionException;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.PostMapping;
 
 @RestController
 @RequestMapping ("/customer")
@@ -14,8 +17,15 @@ public class CustomerController {
     CustomerService customerService;
     @PostMapping
     @RequestMapping("/")
-    public void createCustomer (@RequestBody Customer customer){
-        customerService.createCustomer(customer);
+    public CustomerCreateResponse createCustomer (@RequestBody Customer customer) throws InterruptedException, ExecutionException{
+        return customerService.createCustomer(customer);
+    }
+
+    @GetMapping("/")
+    public CustomerListResponse getAllCustomers() throws InterruptedException, ExecutionException{
+
+        return customerService.getCustomerList();
+
     }
 
 }
