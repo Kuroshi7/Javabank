@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -26,6 +27,11 @@ public class CustomerController {
 
         return customerService.getCustomerList();
 
+    }
+
+    @GetMapping("/search")
+    public CustomerListResponse getCustomerByName(@RequestParam String key)throws InterruptedException, ExecutionException{
+        return customerService.getCustomerListByKey(key);
     }
 
 }

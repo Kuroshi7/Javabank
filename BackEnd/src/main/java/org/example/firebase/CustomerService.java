@@ -49,5 +49,18 @@ public class CustomerService {
             return customerListResponse;
         }
 
+            public CustomerListResponse getCustomerListByKey(String key)throws InterruptedException, ExecutionException{
+                Firestore firestore = FirestoreClient.getFirestore();
+                ApiFuture <QuerySnapshot> apiFuture = firestore.collection("customer")
+                .whereGreaterThanOrEqualTo("name", key)
+                .whereLessThan("name", key+'z').get();
+                List<QueryDocumentSnapshot>list = apiFuture.get().getDocuments();
+
+                List<Customer> customerList = list.stream().map((doc) -> doc.toObject(Customer.class)).collect(Collectors.toList());
+
+                customerListResponse.setList(customerList);
+
+                return customerListResponse;
+            }
 
 }
