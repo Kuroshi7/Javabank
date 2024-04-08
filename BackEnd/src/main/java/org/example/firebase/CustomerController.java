@@ -3,8 +3,10 @@ package org.example.firebase;
 import java.util.concurrent.ExecutionException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -34,4 +36,14 @@ public class CustomerController {
         return customerService.getCustomerListByKey(key);
     }
 
+    @PutMapping("/update")
+    public CustomerCreateResponse updateCustomer(@RequestBody Customer customer) throws InterruptedException, ExecutionException {
+        return customerService.updateCustomer(customer);
+
+    }
+
+    @DeleteMapping("/delete")
+    public CustomerDeleteResponse deleteCustomer (@RequestParam String id) throws InterruptedException, ExecutionException{
+        return customerService.deleteCustomer(id);
+    }
 }
