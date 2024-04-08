@@ -1,0 +1,97 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: sans-serif;
+    width: 99vw;
+    height: 99vh;
+}
+
+#cadastro{
+    padding: 30px;
+    background-color: #00fa9a;
+    border: 0px solid red;
+    width: 100%;
+    height: 100%;
+}
+
+h1.titulo{
+    margin-bottom: 30px;
+    text-align: center;
+    color: #7fffd4;
+    font-size: 2em;
+}
+
+#formCadastro{
+    margin: 0 auto;
+    width: 800px;
+    height: 450px;
+    border: 0px solid black;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 1);
+}
+
+#formCadastro form{
+    border: 0px solid red;
+    height: 100%;
+    display: flex;
+    row-gap: 30px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.nome-cpf, .email-idade, .senhas{
+    border: 0px solid red;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#formCadastro form input{
+    display: block;
+    width: 230px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    background-color: gainsboro;
+    border-radius: 10px;
+    padding: 4px;
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+#formCadastro form label{
+    display: block;
+    font-size: 1.2em;
+}
+
+.divButton{
+    border: 0px solid red;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+}
+
+.divButton span a{
+    color: black;
+}
+
+.btn-cadastro{
+    font-size: 1.3em;
+    width: 230px;
+    padding: 7px;
+    border-radius: 10px;
+    color: #7fffd4;
+    border: 3px solid black;
+    background-color: black;
+}
+
+.btn-cadastro:hover{
+    color: #AFEEEE;
+    border: 3px solid #AFEEEE;
+    background-color: black;
+    cursor: pointer;
+    transition: .5s;
+}

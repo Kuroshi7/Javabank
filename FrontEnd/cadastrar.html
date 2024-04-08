@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/cadastrar.css">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <div id="cadastro">
+
+        <section>
+            <h1 class="titulo" >Seja bem vindo ao ConnectBank</h1>
+        </section>
+
+        <section id="formCadastro" >
+            <form>
+
+                <div class="nome-cpf" >
+                    <div>
+                        <label for="nome">Nome</label>
+                        <input id="nome" type="text" required>
+                    </div>
+
+                    <div>
+                        <label for="cpf">CPF</label>
+                        <input id="cpf" type="text">
+                    </div>
+                </div>
+
+                <div class="email-idade" >
+                    <div>
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" required>
+                    </div>
+                    <div>
+                        <label for="idade">Idade</label>
+                        <input id="idade" type="number">
+                    </div>
+                </div>
+
+                <div class="senhas" >
+                    <div>
+                        <label for="password">Senha</label>
+                        <input id="password" type="password">
+                    </div>
+
+                    <div>
+                        <label for="confirmPassword">Confirmar Senha</label>
+                        <input id="confirmPassword" type="password">
+                    </div>
+                </div>
+
+                <div class="divButton" >
+                    <button class="btn-cadastro" type="submit" >Criar Conta</button>
+
+                    <span>ou <a href="index.html">Voltar para area de login</a></span>
+                </div>
+            </form>
+        </section>
+
+    </div>
+
+    <script src="JS/scriptCadastro.js" ></script>
+
+</body>
+</html>
