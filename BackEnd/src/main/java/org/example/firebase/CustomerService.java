@@ -24,20 +24,20 @@ public class CustomerService {
     @Autowired
     CustomerDeleteResponse customerDeleteResponse;
 
-    public CustomerCreateResponse createCustomer (Customer customer) throws InterruptedException, ExecutionException{
-        Firestore fireStore = FirestoreClient.getFirestore();
+        public CustomerCreateResponse createCustomer (Customer customer) throws InterruptedException, ExecutionException{
+            Firestore fireStore = FirestoreClient.getFirestore();
 
-        DocumentReference docReference = fireStore.collection("customer").document();
+            DocumentReference docReference = fireStore.collection("customer").document();
 
-        customer.setId(docReference.getId());
+            customer.setId(docReference.getId());
         
-        ApiFuture<WriteResult> apiFuture = docReference.set(customer);
+            ApiFuture<WriteResult> apiFuture = docReference.set(customer);
         
-        customerCreateResponse.setUpdatedTime(apiFuture.get().getUpdateTime().toDate());
-        customerCreateResponse.setId(customer.getId());
+            customerCreateResponse.setUpdatedTime(apiFuture.get().getUpdateTime().toDate());
+            customerCreateResponse.setId(customer.getId());
 
-        return customerCreateResponse;
-    }
+            return customerCreateResponse;
+        }
 
         public CustomerListResponse getCustomerList()throws InterruptedException, ExecutionException{
             Firestore fireStore = FirestoreClient.getFirestore();
@@ -52,18 +52,18 @@ public class CustomerService {
         }
 
             public CustomerListResponse getCustomerListByKey(String key)throws InterruptedException, ExecutionException{
-                Firestore fireStore = FirestoreClient.getFirestore();
-                ApiFuture <QuerySnapshot> apiFuture = fireStore.collection("customer")
-                .whereGreaterThanOrEqualTo("name", key)
-                .whereLessThan("name", key+'z').get();
-                List<QueryDocumentSnapshot>list = apiFuture.get().getDocuments();
+            Firestore fireStore = FirestoreClient.getFirestore();
+            ApiFuture <QuerySnapshot> apiFuture = fireStore.collection("customer")
+            .whereGreaterThanOrEqualTo("name", key)
+            .whereLessThan("name", key+'z').get();
+            List<QueryDocumentSnapshot>list = apiFuture.get().getDocuments();
 
-                List<Customer> customerList = list.stream().map((doc) -> doc.toObject(Customer.class)).collect(Collectors.toList());
+            List<Customer> customerList = list.stream().map((doc) -> doc.toObject(Customer.class)).collect(Collectors.toList());
 
-                customerListResponse.setList(customerList);
+            customerListResponse.setList(customerList);
 
-                return customerListResponse;
-            }
+            return customerListResponse;
+        }
         
         public CustomerCreateResponse updateCustomer (Customer customer) throws InterruptedException, ExecutionException{
             Firestore fireStore = FirestoreClient.getFirestore();
