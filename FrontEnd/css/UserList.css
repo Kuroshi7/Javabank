@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(10deg, #00fa9a, #7fa8ff);
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #e8eaec5b;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container h1 {
+    margin-top: 0; 
+    color: #333; 
+    font-size: 40px; 
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+
+#usuarios {
+    padding: 20px;
+    border: 1px solid #d4d0d06e;
+    border-radius: 5px;
+    background-color: #babdbb6b;
+}
+
+
+.usuario {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+
+.usuario .nome {
+    font-weight: bold;
+}
+
+
+.usuario .email {
+    color: #666;
+}

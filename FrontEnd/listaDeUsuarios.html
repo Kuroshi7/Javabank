@@ -4,23 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="./JS/carregarUsuarios.js"></script>
+    <link rel="stylesheet" href="./css/UserList.css">
 </head>
 <body>
-
-    <p id="usuarios" >
-    </p>
+    <div class="container">
+        <h1>Lista de usuários cadastrados</h1>
+        <div id="usuarios"></div>
+    </div>
+        
     
     <script>
-        const p = document.getElementById('usuarios')
-
-        fetch('http://localhost:8080/customer/')
-        .then(data => {
-            return data.text()
-        })
-        .then(dados => {
-            console.log(dados)
-            p.innerText = dados
-        })
+        
+        window.addEventListener('load', carregarUsuarios);
     </script>
 </body>
 </html>
