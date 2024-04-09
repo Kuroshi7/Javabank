@@ -86,4 +86,16 @@ public class CustomerService {
             return customerDeleteResponse;
         }
 
+        public boolean autenticarUsuario (String email, String senha) throws InterruptedException, ExecutionException{
+            Firestore fireStore = FirestoreClient.getFirestore();
+
+            ApiFuture<QuerySnapshot> query = fireStore.collection("customer")
+                .whereEqualTo("email", email)
+                .whereEqualTo("senha", senha)
+                .get();
+
+                List <QueryDocumentSnapshot> documents = query.get().getDocuments();
+                return !documents.isEmpty();
+        }
+
 }
