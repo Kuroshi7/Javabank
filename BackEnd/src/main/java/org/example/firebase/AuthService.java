@@ -13,8 +13,8 @@ import java.util.concurrent.ExecutionException;
 public class AuthService {
 
     public AuthResponse authenticate(String email, String senha) {
-        Firestore firestore = FirestoreClient.getFirestore();
-        ApiFuture<QuerySnapshot> future = firestore.collection("customer").whereEqualTo("email", email).get();
+        Firestore fireStore = FirestoreClient.getFirestore();
+        ApiFuture<QuerySnapshot> future = fireStore.collection("customer").whereEqualTo("email", email).get();
 
         try {
             QuerySnapshot querySnapshot = future.get();
