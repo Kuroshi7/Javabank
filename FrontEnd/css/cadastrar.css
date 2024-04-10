@@ -14,8 +14,9 @@ body{
     padding: 30px;
     background: linear-gradient(10deg, #00fa9a, #7fa8ff);
     border: 0px solid red;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    
 }
 
 h1.titulo{

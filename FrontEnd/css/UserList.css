@@ -70,3 +70,8 @@ li {
 .usuario .email {
     color: #666;
 }
+
+.usuario .cpf {
+    letter-spacing: .2rem ;
+    color: #000000;
+}
