@@ -26,10 +26,10 @@ public class CustomerController {
 
     @PostMapping("/authenticate")
     public ResponseEntity<?> authenticateUser(@RequestBody AuthRequest request)throws InterruptedException, ExecutionException{
-        AuthResponse response = authService.authenticate(request.getEmail(), request.getSenha());
+        AuthResponse response = authService.authenticate(request.getCpf(), request.getSenha());
         
         if (response.isAutenticado()){
-            return ResponseEntity.ok(request);
+            return ResponseEntity.ok(response);
         } else {
             return ResponseEntity.status(HttpStatus.SC_UNAUTHORIZED).body(response);
         }
@@ -51,6 +51,11 @@ public class CustomerController {
     @GetMapping("/search")
     public CustomerListResponse getCustomerByName(@RequestParam String key)throws InterruptedException, ExecutionException{
         return customerService.getCustomerListByKey(key);
+    }
+
+    @GetMapping("/searchIdent")
+    public CustomerListResponse getCustomerByCpf(@RequestParam String cpf)throws InterruptedException, ExecutionException{
+        return customerService.getCustomerListByCpf(cpf);
     }
 
     @PutMapping("/update")

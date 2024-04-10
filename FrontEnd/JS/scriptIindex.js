@@ -1,17 +1,28 @@
-const email = document.getElementById('cpf')
+const cpf = document.getElementById('cpf')
 const senha = document.getElementById('senha')
 
-const renderizarUsuario = (email) => { 
-    window.location.href = `usuario.html?usuario=${email}`
+const renderizarUsuario = (token) => { 
+
+    let criptography = ''
+    let indice = (cpf.value).length
+    while(criptography.length < (cpf.value).length){
+        const n = cpf.value[indice-1]
+        criptography = criptography + n
+        indice--
+    }
+
+    const param = token.toString() + criptography
+    window.location.href = `usuario.html?key=${param}`
 }
 
-const requestLogin = async (email, senha) => {
+const requestLogin = async (cpf, senha) => {
 
     const login = {
-        email: email,
-        //cpf: cpf.replace(/[^0-9]/g,''),
+        cpf: cpf.replace(/[^0-9]/g,''),
         senha: senha
     }
+
+    console.log(login.cpf)
 
     const options = {
         method: 'POST',
@@ -28,8 +39,8 @@ const requestLogin = async (email, senha) => {
            }
         return data.json();
     }).then(update => {
-        console.log(update);
-        renderizarUsuario(update.email)
+        renderizarUsuario(update.token)
+        console.log(update)
     }).catch(e => {
         console.log(`ERROR: ${e}`);
         alert('Usuario ou senha incorretos')
@@ -40,10 +51,8 @@ const requestLogin = async (email, senha) => {
 document.addEventListener('submit', async (e) => {
     e.preventDefault()
 
-    console.log(email.value)
-
-    if(email.value == "") alert('Cpf não pode estar em branco') 
+    if(cpf.value == "") alert('Cpf não pode estar em branco') 
     else if(senha.value == "") alert('senha não pode estar em branco')
-    else await requestLogin(email.value, senha.value)
+    else await requestLogin(cpf.value, senha.value)
 
 })

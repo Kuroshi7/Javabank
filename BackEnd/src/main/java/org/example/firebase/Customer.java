@@ -12,16 +12,16 @@ public class Customer {
     private String idade;
     private String senha;
     
-    public String getsenha() {
+    public String getSenha() {
         return senha;
     }
-    public void setsenha(String senha) {
+    public void setSenha(String senha) {
         this.senha = senha;
     }
-    public String getcpf() {
+    public String getCpf() {
         return cpf;
     }
-    public void setcpf(String cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
     public String getIdade() {

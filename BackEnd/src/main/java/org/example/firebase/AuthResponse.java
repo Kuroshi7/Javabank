@@ -6,12 +6,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class AuthResponse {
     private boolean autenticado;
-    private String token;
+    private int token;
 
     public AuthResponse() {
     }
 
-    public AuthResponse(boolean autenticado, String token) {
+    public AuthResponse(boolean autenticado,int token) {
         this.autenticado = autenticado;
         this.token = token;
     }
@@ -24,11 +24,11 @@ public class AuthResponse {
         this.autenticado = autenticado;
     }
 
-    public String getToken() {
+    public int getToken() {
         return token;
     }
 
-    public void setToken(String token) {
+    public void setToken(int token) {
         this.token = token;
     }
 }
