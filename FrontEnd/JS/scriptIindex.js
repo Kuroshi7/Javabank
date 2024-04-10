@@ -22,8 +22,6 @@ const requestLogin = async (cpf, senha) => {
         senha: senha
     }
 
-    console.log(login.cpf)
-
     const options = {
         method: 'POST',
         headers: {

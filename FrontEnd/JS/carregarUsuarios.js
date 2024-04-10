@@ -28,4 +28,21 @@ function carregarUsuarios() {
         .catch(error => console.error('Erro:', error));
 }
 
-document.addEventListener('DOMContentLoaded', carregarUsuarios);
+function fazerLogin(e){
+    e.preventDefault()
+    const user = document.getElementById('user').value
+    const senha = document.getElementById('senha').value
+    const containerUsuarios = document.querySelector('.containerUsuarios')
+    const divLogin = document.querySelector('.login')
+
+    if(user == 'admin' && senha == 'admin'){
+        divLogin.style.display = 'none'
+        containerUsuarios.style.display = 'block'
+        carregarUsuarios()
+    } else {
+        alert('Usuario ou senha incorretos')
+    }
+}
+
+//document.addEventListener('DOMContentLoaded', carregarUsuarios);
+document.addEventListener('submit', fazerLogin)

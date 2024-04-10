@@ -25,6 +25,7 @@ const renderUser = (usuario) => {
 }
 
 const carregarDadosUsuario = async (cpf) => {
+    console.log(cpf)
     await fetch(`http://localhost:8080/customer/searchIdent?cpf=${cpf}`)
             .then(response => {
                 return response.json();

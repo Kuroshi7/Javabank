@@ -3,21 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>administrador</title>
     <script src="./JS/carregarUsuarios.js"></script>
     <link rel="stylesheet" href="./css/UserList.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Lista de usuários cadastrados</h1>
-        <input type="text" id="filtroInput" placeholder="Filtrar usuários">
+    <div class="container" >
 
-        <div id="usuarios"></div>
+        <div class="login" >
+            <h1>Painel do administrador</h1>
+            <form action="">
+                <div>
+                    <label for="user">Usuario</label>
+                    <input type="text" id="user">
+                </div>
+                <div>
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha">
+                </div>
+                <div>
+                    <button type="submit" >Entrar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="containerUsuarios">
+            <h1>Lista de usuários cadastrados</h1>
+            <input type="text" id="filtroInput" placeholder="Filtrar usuários">
+    
+            <div id="usuarios"></div>
+        </div>
     </div>
+
         
     
     <script>
-        
         window.addEventListener('load', carregarUsuarios);
     </script>
 </body>

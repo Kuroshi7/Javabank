@@ -9,7 +9,39 @@ body {
     background: linear-gradient(10deg, #00fa9a, #7fa8ff);
 }
 
-.container {
+/* CSS LOGIN */
+
+.login{
+    border: 0px solid red;
+    width: 500px;
+    margin: 100px auto;
+}
+
+.login div{
+    margin: 20px 0px;
+    border: 0px solid red;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+input{
+    padding: 5px;
+    width: 200px;
+}
+
+/* FIM CSS LOGIN */
+
+.container{
+    width: 100%;
+    height: 100%;
+}
+
+.containerUsuarios{
+    display: none;
+    margin: 30px auto;
     width: 80%;
     max-width: 800px;
     padding: 20px;
@@ -18,7 +50,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.container h1 {
+.containerUsuarios h1 {
     margin-top: 0; 
     color: #333; 
     font-size: 40px; 

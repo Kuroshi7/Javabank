@@ -45,9 +45,30 @@ const limparInput = () => {
     senha1.value = ""
 }
 
+const verifyUser = async (cpf) => {
+
+    let c = false
+
+    await fetch(`http://localhost:8080/customer/searchIdent?cpf=${cpf}`)
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                if(data.list[0]) c = true
+            })
+            .catch(error => {
+                console.log('Usuario nao encontrado')
+            })
+
+    if(c) alert('Este CPF ja esta em uso')
+    return c
+}
+
 const RequestPost = async (name, cpf, email, idade, senha) => {
 
-        limparInput(name,cpf,email,idade,senha,senha1)
+        const verify = await verifyUser(cpf)
+        if(verify) return
+        limparInput()
 
         const dados = {
             name: name,
