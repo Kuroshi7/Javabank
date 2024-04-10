@@ -8,11 +8,22 @@
 </head>
 <body>
     
-    <h1>Olá <span id="user" ></span> seja bem vindo(a)</h1>
+    <div id="container" >
+        <header>
+            <h1>ConnectBank</h1>
+            <div class="conta" >Conta: &nbsp;</div>
+            <div class="saldo" >Saldo: </div>
+            <div class="logout"><a href="index.html"><button>Logout</button></a></div>
+        </header>
+        
+        <section class="boasVindas" >
+            <h1>Olá, <span id="user" ></span></h1>
+        </section>
 
-    <ul id="dados"></ul>
-
-    <a href="index.html"><button>Logout</button></a>
+        <ul id="dados"></ul>
+    
+        
+    </div>
 
     <script type="module" src="JS/usuario.js" ></script>
 </body>

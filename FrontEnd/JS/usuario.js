@@ -17,6 +17,8 @@ const descriptograph = () => {
 const renderUser = (usuario) => {
     span.innerText = usuario.name
 
+    document.querySelector('.conta').innerText += usuario.cpf
+
     ul.innerHTML = `
         <li>Email: ${usuario.email}</li>
         <li>CPF: ${usuario.cpf}</li>

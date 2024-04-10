@@ -1,6 +1,34 @@
-h1{
-    text-align: center;
-    margin-top: 50px;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+header{
+    padding: 15px;
+    background: linear-gradient(50deg, #11ad71, #7fa8ff);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1{
+    color: #00ff55;
+}
+
+.conta, 
+.saldo{
+    font-size: 1.3em;
+    color: white;
+}
+
+section.boasVindas{
+    padding: 10px 0px;
+}
+
+section.boasVindas h1{
+    padding: 10px;
 }
 
 ul{
