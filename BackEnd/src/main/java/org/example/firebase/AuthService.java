@@ -7,14 +7,15 @@ import com.google.cloud.firestore.QuerySnapshot;
 import com.google.firebase.cloud.FirestoreClient;
 import org.springframework.stereotype.Service;
 
+import java.util.Random;
 import java.util.concurrent.ExecutionException;
 
 @Service
 public class AuthService {
 
-    public AuthResponse authenticate(String email, String senha) {
+    public AuthResponse authenticate(String cpf, String senha) {
         Firestore fireStore = FirestoreClient.getFirestore();
-        ApiFuture<QuerySnapshot> future = fireStore.collection("customer").whereEqualTo("email", email).get();
+        ApiFuture<QuerySnapshot> future = fireStore.collection("customer").whereEqualTo("cpf", cpf).get();
 
         try {
             QuerySnapshot querySnapshot = future.get();
@@ -22,7 +23,9 @@ public class AuthService {
                 for (QueryDocumentSnapshot document : querySnapshot.getDocuments()) {
                     String senhaNoBanco = document.getString("senha");
                     if (senhaNoBanco != null && senhaNoBanco.equals(senha)) {
-                        return new AuthResponse(true, "token");
+                        Random random = new Random();
+                        int key = random.nextInt();
+                        return new AuthResponse(true, key );
                     }
                 }
             }
@@ -30,6 +33,6 @@ public class AuthService {
             e.printStackTrace();
         }
 
-        return new AuthResponse(false, null);
+        return new AuthResponse(false, 0);
     }
 }

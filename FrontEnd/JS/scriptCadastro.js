@@ -74,6 +74,7 @@ const RequestPost = async (name, cpf, email, idade, senha) => {
         }).then(update => {
             console.log(update);
             alert('Cadastro realizado com sucesso')
+            window.location.href = 'index.html'
         }).catch(e => {
             console.log(`ERROR: ${e}`);
             alert('Erro ao conectar com banco de dados, envie os dados novamente')

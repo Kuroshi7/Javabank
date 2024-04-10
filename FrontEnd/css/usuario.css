@@ -1,0 +1,32 @@
+h1{
+    text-align: center;
+    margin-top: 50px;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    width: 300px;
+    margin: 0 auto;
+}
+
+li{
+    text-align: center;
+    font-size: 1.2em;
+    padding: 6px;
+}
+
+button{
+    padding: 5px 10px;
+    display: block;
+    margin: 10px auto;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+button:hover{
+    cursor: pointer;
+}

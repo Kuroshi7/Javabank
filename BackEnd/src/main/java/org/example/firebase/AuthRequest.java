@@ -1,13 +1,13 @@
 package org.example.firebase;
 
 public class AuthRequest {
-    private String email;
+    private String cpf;
     private String senha;
-    public String getEmail() {
-        return email;
+    public String getCpf() {
+        return cpf;
     }
-    public void setEmail(String email) {
-        this.email = email;
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
     }
     public String getSenha() {
         return senha;
