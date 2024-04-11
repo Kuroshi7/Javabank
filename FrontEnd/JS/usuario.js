@@ -15,9 +15,7 @@ const descriptograph = () => {
 }
 
 const renderUser = (usuario) => {
-    span.innerText = usuario.name
-
-    document.querySelector('.conta').innerText += usuario.cpf
+    document.querySelector('.conta').innerText += usuario.name + " " + usuario.cpf
 
     ul.innerHTML = `
         <li>Email: ${usuario.email}</li>
@@ -46,4 +44,3 @@ document.addEventListener('DOMContentLoaded', () => {
     const cpf = descriptograph()
     carregarDadosUsuario(cpf)
 })
-

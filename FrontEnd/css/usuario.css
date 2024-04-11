@@ -17,6 +17,11 @@ header h1{
     color: #00ff55;
 }
 
+#container{
+    background-color: #E0FFFF;
+    height: 100vh;
+}
+
 .conta, 
 .saldo{
     font-size: 1.3em;
@@ -24,14 +29,58 @@ header h1{
 }
 
 section.boasVindas{
-    padding: 10px 0px;
+    padding: 20px 0px;
 }
 
 section.boasVindas h1{
+    text-align: center;
     padding: 10px;
 }
 
+section.servicos {
+    display: flex;
+    border: 0px solid black;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+    padding: 20px;
+}
+
+section.servicos div{
+    background-color: white;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    width: 250px;
+    height: 350px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 100px;
+    padding: 20px;
+}
+
+section.servicos div:hover{
+    background: linear-gradient(50deg, #11ad71, #7fa8ff);
+    transition: 0.7s;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.icon{
+    margin-top: 100px;
+    font-size: 8em;
+    color: #2ea85d;
+    color: black;
+}
+
+.deposito h1,
+.transferencia h1,
+.saque h1{
+    text-align: center;
+}
+
 ul{
+    display: none;
     list-style: none;
     padding: 0;
     width: 300px;
