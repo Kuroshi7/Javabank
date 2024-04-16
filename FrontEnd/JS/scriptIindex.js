@@ -1,18 +1,23 @@
 const cpf = document.getElementById('cpf')
 const senha = document.getElementById('senha')
 
-const renderizarUsuario = (token) => { 
+const renderizarUsuario = (id) => { 
+    window.location.href = `usuario.html?key=${id}`
+}
 
-    let criptography = ''
-    let indice = (cpf.value).length
-    while(criptography.length < (cpf.value).length){
-        const n = cpf.value[indice-1]
-        criptography = criptography + n
-        indice--
-    }
+const criarSession = async (options) => {
 
-    const param = token.toString() + criptography
-    window.location.href = `usuario.html?key=${param}`
+    const dados = { cpf: cpf.value }
+
+    const data = await fetch('http://localhost:8080/session/', options)
+    .then(data => { console.log('success') })
+    .catch(e => { console.log(`ERROR: ${e}`) })
+
+    const idSession = await fetch(`http://localhost:8080/session/`)
+    .then(response => { return response.json(); })
+    .then(data => { renderizarUsuario(data.list[0].id) })
+    .catch(error => { console.log('ERROR: ' + error) })
+
 }
 
 const requestLogin = async (cpf, senha) => {
@@ -36,9 +41,8 @@ const requestLogin = async (cpf, senha) => {
             throw Error(data.status);
            }
         return data.json();
-    }).then(update => {
-        renderizarUsuario(update.token)
-        console.log(update)
+    }).then( async () => {
+        await criarSession(options)
     }).catch(e => {
         console.log(`ERROR: ${e}`);
         alert('Usuario ou senha incorretos')

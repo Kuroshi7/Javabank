@@ -24,6 +24,9 @@ public class SessionService {
     @Autowired
     SessionListResponse sessionListResponse;
 
+    @Autowired
+    SessionDeleteResponse sessionDeleteResponse;
+
     public SessionCreateResponse createSession(Session session) throws InterruptedException, ExecutionException {
         Firestore fireStore = FirestoreClient.getFirestore();
 
@@ -51,6 +54,16 @@ public class SessionService {
         sessionListResponse.setList(sessionList);
 
         return sessionListResponse;
+    }
+
+    public SessionDeleteResponse deleteSession (String id) throws InterruptedException, ExecutionException{
+        Firestore fireStore = FirestoreClient.getFirestore();
+        DocumentReference docReference = fireStore.collection("session").document(id);
+        ApiFuture<WriteResult> apiFuture = docReference.delete();
+        sessionDeleteResponse.setUpdatedDate(apiFuture.get().getUpdateTime().toDate());
+        sessionDeleteResponse.setStatus(true);
+
+        return sessionDeleteResponse;
     }
 
 }

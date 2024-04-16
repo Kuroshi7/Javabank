@@ -29,7 +29,7 @@ public class CustomerController {
         AuthResponse response = authService.authenticate(request.getCpf(), request.getSenha());
         
         if (response.isAutenticado()){
-            return ResponseEntity.ok(response);
+            return ResponseEntity.ok(request);
         } else {
             return ResponseEntity.status(HttpStatus.SC_UNAUTHORIZED).body(response);
         }
