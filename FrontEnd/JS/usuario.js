@@ -20,7 +20,6 @@ const carregarDadosUsuario = async (cpf) => {
             })
             .then(data => {
                 renderUser(data.list[0])
-                console.log(data.list[0])
             })
             .catch(error => {
                 console.log('ERROR: ' + error)
@@ -32,8 +31,15 @@ const carregarSession = async () => {
     const idSession = await fetch(`http://localhost:8080/session/`)
     .then(response => { return response.json(); })
     .then(data => { 
-        if(data.list[0].id == key) carregarDadosUsuario(data.list[0].cpf) 
-        else window.location.href = '404.html'
+        //if(data.list[0].id == key) carregarDadosUsuario(data.list[0].cpf)
+        let c = false 
+        for(let object of data.list){
+            if(object.id == key) {
+                carregarDadosUsuario(object.cpf)
+                c = true
+            } 
+        }
+        if(!c) window.location.href = '404.html'
     })
     .catch(error => { 
         console.log('ERROR: ' + error) 
@@ -46,7 +52,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 })
 
 const encerrarSession = async () => {
-
+    console.log(key)
     const options = {
         method: 'DELETE',
         mode: 'cors',
