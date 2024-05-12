@@ -2,6 +2,7 @@ package org.example.firebase;
 
 import java.util.Date;
 
+import org.example.entities.ContaCorrente;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -21,6 +22,5 @@ public class CustomerCreateResponse {
         public void setUpdatedTime(Date updatedTime) {
             this.updatedTime = updatedTime;
         }
-
     
 }

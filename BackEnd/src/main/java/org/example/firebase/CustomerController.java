@@ -61,7 +61,6 @@ public class CustomerController {
     @PutMapping("/update")
     public CustomerCreateResponse updateCustomer(@RequestBody Customer customer) throws InterruptedException, ExecutionException {
         return customerService.updateCustomer(customer);
-
     }
 
     @DeleteMapping("/delete")
