@@ -5,7 +5,7 @@ const key = urlParams.get('key')
 const renderUser = (usuario) => {
     const ul = document.getElementById('dados')
     document.querySelector('.conta').innerText += usuario.name + " " + usuario.cpf
-
+    document.querySelector('.saldo').innerText += " " + usuario.contaCorrente.saldo;
     ul.innerHTML = `
         <li>Email: ${usuario.email}</li>
         <li>CPF: ${usuario.cpf}</li>
