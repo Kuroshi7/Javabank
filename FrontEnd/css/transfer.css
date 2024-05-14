@@ -55,3 +55,17 @@ body {
 .transferButton:hover {
     background-color: #45a049;
 }
+
+.voltarButton {
+    background-color: #7fa8ff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.voltarButton:hover {
+    background-color: #7fa8ff;
+}
