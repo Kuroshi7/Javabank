@@ -72,4 +72,6 @@ logout.addEventListener('click', async (e) => {
     await encerrarSession()
 })
 
-
+document.querySelector('.transferencia').addEventListener('click', () => {
+    window.location.href = 'transferencia.html';
+});
