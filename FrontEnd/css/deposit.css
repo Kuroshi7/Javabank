@@ -1,0 +1,66 @@
+body {
+    background: linear-gradient(10deg, #00fa9a, #7fa8ff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+#depositForm {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#depositForm label {
+    margin: 10px 0 5px;
+    font-weight: bold;
+    width: 100%;
+}
+
+#depositForm input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#depositForm button {
+    padding: 10px 20px;
+    background-color: #00fa9a;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    width: 100%;
+}
+
+#depositForm button:hover {
+    background-color: #009b76;
+}
+
+#depositForm .back-button {
+    background-color: #ff7f7f;
+}
+
+#depositForm .back-button:hover {
+    background-color: #cc6666;
+}
