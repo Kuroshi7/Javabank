@@ -6,12 +6,14 @@ body {
     height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
+    flex-direction: column;
 }
 
 h1 {
     text-align: center;
     color: #fff;
     margin-bottom: 20px;
+    margin-top: -100px;
 }
 
 #depositForm {
