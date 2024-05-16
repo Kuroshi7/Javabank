@@ -4,30 +4,40 @@ document.getElementById('depositForm').addEventListener('submit', async function
     const cpf = document.getElementById('conta').value;
     const valor = parseFloat(document.getElementById('valor').value);
 
-    if (!cpf || valor <= 0) {
-        alert('Por favor, insira um CPF válido e um valor maior que zero.');
-        return;
-    }
+    
+    await fetch(`http://localhost:8080/customer/searchIdent?cpf=${cpf}`)
+        .then(response => {
+            return response.json();
+        })
+        .then(data => {
+            const customer = data.list[0];
+            customer.contaCorrente.saldo += valor;
 
-    const data = { cpf, valor };
-
-    try {
-        const response = await fetch('http://localhost:8080/transacao/depositar', {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
+            
+            fetch(`http://localhost:8080/transacao/depositar`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(customer)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erro ao processar a solicitação');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Saldo atualizado:', data.contaCorrente.saldo);
+                
+            })
+            .catch(error => {
+                console.error('Erro:', error);
+                
+            });
+        })
+        .catch(error => {
+            console.log('ERROR: ' + error);
+            window.location.href = '404.html';
         });
-
-        if (!response.ok) {
-            throw new Error('Erro ao realizar o depósito');
-        }
-
-        const result = await response.json();
-        alert(`Depósito realizado com sucesso! Novo saldo: ${result.saldo}`);
-    } catch (error) {
-        console.error('Erro:', error);
-        alert('Ocorreu um erro ao realizar o depósito. Por favor, tente novamente.');
-    }
 });
