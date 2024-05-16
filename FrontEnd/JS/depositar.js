@@ -9,12 +9,12 @@ document.getElementById('depositForm').addEventListener('submit', async function
         .then(response => {
             return response.json();
         })
-        .then(data => {
+        .then(async data => {
             const customer = data.list[0];
             customer.contaCorrente.saldo += valor;
 
             
-            fetch(`http://localhost:8080/transacao/depositar`, {
+            await fetch (`http://localhost:8080/transacao/depositar`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
