@@ -1,5 +1,5 @@
 const depositar = async (customer) => {
-    await fetch (`http://192.168.18.13:8080/transacao/depositar`, {
+    await fetch (`http://localhost:8080/transacao/depositar`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ const depositar = async (customer) => {
 const buscarCustomer = async (valor, cpf) => {
     if(!valor || valor == 0) return
 
-    await fetch(`http://192.168.18.13:8080/customer/searchIdent?cpf=${cpf}`)
+    await fetch(`http://localhost:8080/customer/searchIdent?cpf=${cpf}`)
         .then(response => {
             return response.json();
         })
