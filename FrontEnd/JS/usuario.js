@@ -14,7 +14,7 @@ const renderUser = (usuario) => {
 }
 
 const carregarDadosUsuario = async (cpf) => {
-    await fetch(`http://localhost:8080/customer/searchIdent?cpf=${cpf}`)
+    await fetch(`http://192.168.18.13:8080/customer/searchIdent?cpf=${cpf}`)
             .then(response => {
                 return response.json();
             })
@@ -28,7 +28,7 @@ const carregarDadosUsuario = async (cpf) => {
 }
 
 const carregarSession = async () => {
-    const idSession = await fetch(`http://localhost:8080/session/`)
+    const idSession = await fetch(`http://192.168.18.13:8080/session/`)
     .then(response => { return response.json(); })
     .then(data => { 
         //if(data.list[0].id == key) carregarDadosUsuario(data.list[0].cpf)
@@ -61,7 +61,7 @@ const encerrarSession = async () => {
         }
       };
 
-    await fetch(`http://localhost:8080/session/delete?id=${key}`, options)
+    await fetch(`http://192.168.18.13:8080/session/delete?id=${key}`, options)
     .then(response => { window.location.href = 'index.html' })
     .catch( e => { console.log('ERROR: ' + e) })
 

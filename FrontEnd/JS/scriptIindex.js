@@ -9,11 +9,11 @@ const criarSession = async (options) => {
 
     const dados = { cpf: cpf.value }
 
-    const data = await fetch('http://localhost:8080/session/', options)
+    const data = await fetch('http://192.168.18.13:8080/session/', options)
     .then(data => { console.log('success') })
     .catch(e => { console.log(`ERROR: ${e}`) })
 
-    const idSession = await fetch(`http://localhost:8080/session/`)
+    const idSession = await fetch(`http://192.168.18.13:8080/session/`)
     .then(response => { return response.json(); })
     .then(data => { renderizarUsuario(data.list[0].id) })
     .catch(error => { console.log('ERROR: ' + error) })
@@ -35,7 +35,7 @@ const requestLogin = async (cpf, senha) => {
         body: JSON.stringify(login) // Converte os dados para o formato JSON
     };
 
-    const data = await fetch('http://localhost:8080/customer/authenticate', options)
+    const data = await fetch('http://192.168.18.13:8080/customer/authenticate', options)
     .then(data => {
         if (!data.ok) {
             throw Error(data.status);

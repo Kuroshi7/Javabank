@@ -1,5 +1,5 @@
 function carregarUsuarios() {
-    fetch('http://localhost:8080/customer/')
+    fetch('http://192.168.18.13:8080/customer/')
         .then(response => response.json())
         .then(data => {
             const usuarios = document.getElementById('usuarios');
