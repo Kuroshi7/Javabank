@@ -1,3 +1,4 @@
+
 const logout = document.querySelector('.logout')
 const urlParams = new URLSearchParams(window.location.search)
 const key = urlParams.get('key')
@@ -72,6 +73,4 @@ logout.addEventListener('click', async (e) => {
     await encerrarSession()
 })
 
-document.querySelector('.transferencia').addEventListener('click', () => {
-    window.location.href = 'transferencia.html';
-});
+
