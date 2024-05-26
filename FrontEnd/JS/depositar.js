@@ -1,20 +1,5 @@
-document.getElementById('depositForm').addEventListener('submit', async function(event) {
-    event.preventDefault();
-
-    const cpf = document.getElementById('conta').value;
-    const valor = parseFloat(document.getElementById('valor').value);
-
-    
-    await fetch(`http://localhost:8080/customer/searchIdent?cpf=${cpf}`)
-        .then(response => {
-            return response.json();
-        })
-        .then(async data => {
-            const customer = data.list[0];
-            customer.contaCorrente.saldo += valor;
-
-            
-            await fetch (`http://localhost:8080/transacao/depositar`, {
+const depositar = async (customer) => {
+    await fetch (`http://localhost:8080/transacao/depositar`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'
@@ -28,16 +13,38 @@ document.getElementById('depositForm').addEventListener('submit', async function
                 return response.json();
             })
             .then(data => {
-                console.log('Saldo atualizado:', data.contaCorrente.saldo);
-                
+                location.reload()
             })
             .catch(error => {
                 console.error('Erro:', error);
-                
             });
+}
+
+const buscarCustomer = async (valor, cpf) => {
+    if(!valor || valor == 0) return
+
+    await fetch(`http://localhost:8080/customer/searchIdent?cpf=${cpf}`)
+        .then(response => {
+            return response.json();
+        })
+        .then(async data => {
+            const customer = data.list[0];
+            customer.contaCorrente.saldo += valor;
+            depositar(customer);
         })
         .catch(error => {
-            console.log('ERROR: ' + error);
-            window.location.href = '404.html';
+            alert('ERRO AO FAZER DEPÓSITO')
         });
+}
+
+document.querySelector('.deposito').addEventListener('click', async () => {
+    const valor = Number(prompt('Digite o valor de depósito: '))
+    const cpf = (document.querySelector('.conta').innerHTML).replace(/[^0-9]/g,'')
+
+    if(valor < 0){
+        alert('VOCÊ NÃO PODE DEPOSITAR VALORES NEGATIVOS')
+        return
+    }
+
+    buscarCustomer(valor, cpf);
 });

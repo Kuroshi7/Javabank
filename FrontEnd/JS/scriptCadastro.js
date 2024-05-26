@@ -71,6 +71,10 @@ const RequestPost = async (name, cpf, email, idade, senha) => {
         limparInput()
 
         const dados = {
+            contaCorrente: {
+                conta: Math.floor(Math.random() * 900000) + 100000,
+                saldo: 0.0 
+            },
             name: name,
             cpf: cpf,
             email: email,

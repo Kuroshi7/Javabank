@@ -13,9 +13,14 @@ header{
     align-items: center;
 }
 
-header h1{
-    color: #00ff55;
+header h1 {
+    color: #ffffff;
+    background: linear-gradient(20deg, #010b22a2, #11ad71bd);
+    border-radius: 50px;
+    width: fit-content;
+    padding: 10px 20px; 
 }
+
 
 #container{
     background-color: #E0FFFF;
@@ -26,6 +31,10 @@ header h1{
 .saldo{
     font-size: 1.3em;
     color: white;
+    background: linear-gradient(20deg, #010b227c, #11ad717c);
+    border-radius: 50px;
+    width: fit-content;
+    padding: 10px 20px;
 }
 
 section.boasVindas{
@@ -57,6 +66,7 @@ section.servicos div{
     flex-direction: column;
     row-gap: 100px;
     padding: 20px;
+    border-radius: 20px;
 }
 
 section.servicos div:hover{
@@ -105,5 +115,21 @@ a{
 }
 
 button:hover{
+    cursor: pointer;
+}
+
+.logout button {
+    background-color: #28a745; /* Cor verde */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.logout button:hover {
+    background-color: #218838; 
+    transform: scale(1.05); 
     cursor: pointer;
 }
