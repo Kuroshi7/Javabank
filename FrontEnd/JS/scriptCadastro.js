@@ -76,7 +76,7 @@ const RequestPost = async (name, cpf, email, idade, senha) => {
                 saldo: 0.0 
             },
             name: name,
-            cpf: cpf,
+            cpf: cpf.replace(/[^0-9]/g,''),
             email: email,
             idade: idade,
             senha: senha

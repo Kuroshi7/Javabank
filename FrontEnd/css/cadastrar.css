@@ -30,7 +30,6 @@ h1.titulo{
     margin: 0 auto;
     width: 800px;
     height: 450px;
-    border: 0px solid black;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.678);
 }
 
@@ -80,9 +79,9 @@ h1.titulo{
 }
 
 .btn-cadastro{
-    font-size: 1.3em;
+    font-size: 1.1em;
     width: 230px;
-    padding: 7px;
+    padding: 5px;
     border-radius: 10px;
     color: #7fffd4;
     border: 3px solid rgb(0, 0, 0);
@@ -95,4 +94,111 @@ h1.titulo{
     background-color: black;
     cursor: pointer;
     transition: .5s;
+}
+
+@media screen and (max-width: 850px){
+    #formCadastro{
+        width: 100%;
+    }
+
+    #formCadastro form input{
+        width: 220px;
+    }
+
+    .btn-cadastro{
+        width: 200px;
+    }
+
+    .nome-cpf, .email-idade, .senhas{
+        width: 100%;
+        column-gap: 60px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .divButton{
+        width: 100%;
+        column-gap: 85px;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 640px){
+
+    h1.titulo{
+        font-size: 1.7em;
+    }
+
+    #cadastro{
+        height: auto;
+        padding: 20px;
+    }
+
+    #formCadastro{
+        height: auto;
+        padding: 40px 0px;
+    }
+
+    .nome-cpf, .email-idade, .senhas{
+        width: 100%;
+        flex-direction: column;
+        row-gap: 20px;
+    }
+
+    .divButton{
+        width: 100%;
+        flex-direction: column;
+        row-gap: 20px;
+        align-items: center;
+    }
+
+}
+
+@media screen and (max-width: 420px){
+
+    h1.titulo{
+        margin-bottom: 0px;
+    }
+
+    #formCadastro{
+        padding-top: 30px;
+        box-shadow: 0px 0px 0px 0px;
+    }
+
+}
+
+@media screen and (max-width: 320px){
+
+    h1.titulo{
+        font-size: 1.4em;
+        margin: 0px;
+    }
+
+    #formCadastro{
+        padding-top: 30px;
+        box-shadow: 0px 0px 0px 0px;
+    }
+   
+    #formCadastro form input{
+        width: 150px;
+        padding: 2px;
+        font-size: 1em;
+    }
+
+    #formCadastro form label{
+        font-size: 1em;
+    }
+
+    .btn-cadastro{
+        width: 150px;
+    }
+
+    .divButton span {
+        text-align: center;
+    }
+
+    .divButton span a{
+        padding: 0px 5px;
+    }
+
 }
