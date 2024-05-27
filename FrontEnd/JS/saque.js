@@ -1,5 +1,5 @@
 const atualizarSaldo = async (customer) => {
-    await fetch(`http://localhost:8080/transacao/depositar`, { 
+    await fetch(`https://javabank-backend-3.onrender.com/transacao/depositar`, { 
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ const atualizarSaldo = async (customer) => {
 const buscarCustomerParaSaque = async (valor, cpf) => {
     if (!valor || valor <= 0) return;
 
-    await fetch(`http://localhost:8080/customer/searchIdent?cpf=${cpf}`)
+    await fetch(`https://javabank-backend-3.onrender.com/customer/searchIdent?cpf=${cpf}`)
         .then(response => response.json())
         .then(async data => {
             const customer = data.list[0];

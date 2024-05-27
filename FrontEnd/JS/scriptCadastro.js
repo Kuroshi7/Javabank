@@ -49,7 +49,7 @@ const verifyUser = async (cpf) => {
 
     let c = false
 
-    await fetch(`http://localhost:8080/customer/searchIdent?cpf=${cpf}`)
+    await fetch(`https://javabank-backend-3.onrender.com/customer/searchIdent?cpf=${cpf}`)
             .then(response => {
                 return response.json();
             })
@@ -90,7 +90,7 @@ const RequestPost = async (name, cpf, email, idade, senha) => {
             body: JSON.stringify(dados) // Converte os dados para o formato JSON
         };
 
-        const data = await fetch('http://localhost:8080/customer/', options)
+        const data = await fetch('https://javabank-backend-3.onrender.com/customer/', options)
         .then(data => {
             if (!data.ok) {
                 throw Error(data.status);

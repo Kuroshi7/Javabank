@@ -1,5 +1,5 @@
 function carregarUsuarios() {
-    fetch('http://localhost:8080/customer/')
+    fetch('https://javabank-backend-3.onrender.com/customer/')
         .then(response => response.json())
         .then(data => {
             const usuarios = document.getElementById('usuarios');

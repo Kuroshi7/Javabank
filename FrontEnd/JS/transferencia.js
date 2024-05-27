@@ -1,5 +1,5 @@
 const transferir = async (contasTransferencia) => {
-    await fetch(`http://localhost:8080/transacao/transferir`, {
+    await fetch(`https://javabank-backend-3.onrender.com/transacao/transferir`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json'
@@ -26,11 +26,11 @@ const buscarCustomers = async (valor, cpfOrigem, cpfDestino) => {
     let customerOrigem, customerDestino;
 
     try {
-        const responseOrigem = await fetch(`http://localhost:8080/customer/searchIdent?cpf=${cpfOrigem}`);
+        const responseOrigem = await fetch(`https://javabank-backend-3.onrender.com/customer/searchIdent?cpf=${cpfOrigem}`);
         const dataOrigem = await responseOrigem.json();
         customerOrigem = dataOrigem.list[0];
         
-        const responseDestino = await fetch(`http://localhost:8080/customer/searchIdent?cpf=${cpfDestino}`);
+        const responseDestino = await fetch(`https://javabank-backend-3.onrender.com/customer/searchIdent?cpf=${cpfDestino}`);
         const dataDestino = await responseDestino.json();
         customerDestino = dataDestino.list[0];
 

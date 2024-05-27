@@ -15,7 +15,7 @@ const renderUser = (usuario) => {
 }
 
 const carregarDadosUsuario = async (cpf) => {
-    await fetch(`http://localhost:8080/customer/searchIdent?cpf=${cpf}`)
+    await fetch(`https://javabank-backend-3.onrender.com/customer/searchIdent?cpf=${cpf}`)
             .then(response => {
                 return response.json();
             })
@@ -29,7 +29,7 @@ const carregarDadosUsuario = async (cpf) => {
 }
 
 const carregarSession = async () => {
-    const idSession = await fetch(`http://localhost:8080/session/`)
+    const idSession = await fetch(`https://javabank-backend-3.onrender.com/session/`)
     .then(response => { return response.json(); })
     .then(data => { 
         //if(data.list[0].id == key) carregarDadosUsuario(data.list[0].cpf)
@@ -62,7 +62,7 @@ const encerrarSession = async () => {
         }
       };
 
-    await fetch(`http://localhost:8080/session/delete?id=${key}`, options)
+    await fetch(`https://javabank-backend-3.onrender.com/session/delete?id=${key}`, options)
     .then(response => { window.location.href = 'index.html' })
     .catch( e => { console.log('ERROR: ' + e) })
 
