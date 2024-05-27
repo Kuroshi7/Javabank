@@ -10,10 +10,9 @@ const transferir = async (contasTransferencia) => {
         if (!response.ok) {
             throw new Error('Erro ao processar a solicitação');
         }
-        return response.json();
-    })
-    .then(data => {
+        alert('Transferência realizada com sucesso')
         location.reload();
+        return response.json();
     })
     .catch(error => {
         console.error('Erro:', error);
@@ -53,18 +52,19 @@ const buscarCustomers = async (valor, cpfOrigem, cpfDestino) => {
         }
     } catch (error) {
         console.error('Erro:', error);
-        alert('Erro ao buscar as contas');
+        alert('Conta destino não localizada');
     }
 }
 
 document.querySelector('.transferencia').addEventListener('click', async () => {
     const valor = Number(prompt('Digite o valor da transferência: '));
-    const cpfOrigem = (document.querySelector('.conta').innerHTML).replace(/[^0-9]/g, '');
+    if (!valor || valor <= 0) return alert('Digite apenas valores validos'); 
     const cpfDestino = prompt('Digite o CPF da conta de destino: ').replace(/[^0-9]/g, '');
+    const cpfOrigem = (document.querySelector('.conta').innerHTML).replace(/[^0-9]/g, '');
 
-    if (valor <= 0) {
-        alert('Você não pode transferir valores negativos ou zero');
-        return;
+    if(cpfOrigem == cpfDestino){
+        alert('Você não pode transferir valores para sua própria conta')
+        return
     }
 
     await buscarCustomers(valor, cpfOrigem, cpfDestino);

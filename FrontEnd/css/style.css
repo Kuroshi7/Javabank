@@ -102,7 +102,7 @@ button.btnLog{
     margin-top: 10px;
 }
 
-button.btnLog:hover{
+button.hover:hover{
     cursor: pointer;
     transition: .5s;
     color: #7fa8ff;

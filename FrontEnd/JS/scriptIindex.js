@@ -1,5 +1,6 @@
 const cpf = document.getElementById('cpf')
 const senha = document.getElementById('senha')
+const btnLog = document.querySelector('.btnLog')
 
 const renderizarUsuario = (id) => { 
     window.location.href = `usuario.html?key=${id}`
@@ -21,6 +22,9 @@ const criarSession = async (options) => {
 }
 
 const requestLogin = async (cpf, senha) => {
+    btnLog.disabled = true
+    btnLog.classList.remove('hover')
+    btnLog.innerText = 'aguarde'
 
     const login = {
         cpf: cpf.replace(/[^0-9]/g,''),
@@ -45,6 +49,9 @@ const requestLogin = async (cpf, senha) => {
         await criarSession(options)
     }).catch(e => {
         console.log(`ERROR: ${e}`);
+        btnLog.disabled = false
+        btnLog.classList.add('hover')
+        btnLog.innerText = 'entrar'
         alert('Usuario ou senha incorretos')
     });
 
