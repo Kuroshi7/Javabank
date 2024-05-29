@@ -21,10 +21,9 @@ header h1 {
     padding: 10px 20px; 
 }
 
-
 #container{
     background-color: #E0FFFF;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .conta, 
@@ -132,4 +131,86 @@ button:hover{
     background-color: #218838; 
     transform: scale(1.05); 
     cursor: pointer;
+}
+
+
+
+@media screen and (max-width: 850px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .conta, 
+    .saldo {
+        font-size: 1em;
+    }
+
+    section.servicos {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 20px;
+        padding: 10px;
+    }
+
+    section.servicos div {
+        width: 90%;
+        height: auto;
+        padding: 15px;
+        row-gap: 50px;
+    }
+
+    .icon {
+        font-size: 6em;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    header h1 {
+        font-size: 1.5em;
+        padding: 5px 10px;
+    }
+
+    .conta, 
+    .saldo {
+        font-size: 0.9em;
+    }
+
+    section.servicos div {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .icon {
+        font-size: 5em;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    header {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.2em;
+        padding: 5px 10px;
+    }
+
+    .conta, 
+    .saldo {
+        font-size: 0.8em;
+    }
+
+    section.boasVindas h1 {
+        font-size: 1.2em;
+    }
+
+    section.servicos div {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .icon {
+        font-size: 4em;
+    }
 }
