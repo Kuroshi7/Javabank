@@ -4,14 +4,10 @@ const urlParams = new URLSearchParams(window.location.search)
 const key = urlParams.get('key')
 
 const renderUser = (usuario) => {
-    const ul = document.getElementById('dados')
-    document.querySelector('.conta').innerText += usuario.name + " " + usuario.cpf
+    document.querySelector('.conta').innerText += usuario.contaCorrente.conta
     document.querySelector('.saldo').innerText += " " + usuario.contaCorrente.saldo + " R$";
-    ul.innerHTML = `
-        <li>Email: ${usuario.email}</li>
-        <li>CPF: ${usuario.cpf}</li>
-        <li>Idade: ${usuario.idade}</li>
-    `   
+    document.querySelector('.usuario').innerText += " " + usuario.name
+    document.querySelector('.cpf').innerText += " " + usuario.cpf 
 }
 
 const carregarDadosUsuario = async (cpf) => {

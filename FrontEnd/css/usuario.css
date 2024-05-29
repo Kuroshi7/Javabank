@@ -27,7 +27,9 @@ header h1 {
 }
 
 .conta, 
-.saldo{
+.saldo,
+.usuario,
+.cpf{
     font-size: 1.3em;
     color: white;
     background: linear-gradient(20deg, #010b227c, #11ad717c);
@@ -136,9 +138,11 @@ button:hover{
 
 
 @media screen and (max-width: 850px) {
+
     header {
         flex-direction: column;
         align-items: flex-start;
+        row-gap: 15px;
     }
 
     .conta, 
@@ -154,7 +158,7 @@ button:hover{
     }
 
     section.servicos div {
-        width: 90%;
+        width: 80%;
         height: auto;
         padding: 15px;
         row-gap: 50px;
@@ -166,6 +170,7 @@ button:hover{
 }
 
 @media screen and (max-width: 640px) {
+
     header h1 {
         font-size: 1.5em;
         padding: 5px 10px;
